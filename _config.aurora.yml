@@ -14,9 +14,9 @@ site:
   nick: YINGHAO
   description: 不念过去 不畏将来 活在当下
   language: cn
-  multi_language: true
-  logo: https://img-blog.csdnimg.cn/20210313122054101.png
-  avatar: https://img-blog.csdnimg.cn/20210313122054101.png
+  multi_language: true 
+  logo: https://img.picgo.net/2022/11/10/51711bd2990a8666c89d396cf5d9a9d9_1.jpg
+  avatar: https://img.picgo.net/2022/11/10/51711bd2990a8666c89d396cf5d9a9d9_1.jpg
   beian: # 如果不需要可以让 number 和 link 保持空白
     number: 
     link: 
@@ -54,8 +54,11 @@ menu:
       en: 'Message Board'
     path: '/page/message-board'
   # 一个 github 项目的外部链接
-  Aurora:
-    name: '工具收藏'
+  tools-collection:
+    name: 'ToolsCollection'
+    i18n:
+      cn: '工具收藏'
+      en: 'Tools Collection'
     path: 'https://nav.newzone.top/'
 
 #! ---------------------------------------------------------------
@@ -111,33 +114,33 @@ site_meta:
 
 # For local development only!
 gitalk:
-  enable: true
+  enable: false
   autoExpand: true
-  clientID: ''
-  clientSecret: ''
-  repo: 'dev-blog-comments'
-  owner: 'TriDiamond'
-  admin: ['TriDiamond']
+  clientID: 'dd3cb72ab45de9d8a362'
+  clientSecret: 'e8f294d7a5b3d1073da739f8b898140fe4276954'
+  repo: 'BlogComments'
+  owner: 'liuHeroes'
+  admin: ['liuHeroes']
   id: uid
-  language: en
+  language: zh-CN
   distractionFreeMode: true
   recentComment: true
-  proxy: ''
+  proxy: 'https://voluble-faun-9be316.netlify.app/github_access_token'
 
 # Valine comment plugin (recommended!)
 # see https://valine.js.org/quickstart.html
 valine:
-  enable: false
-  app_id:
-  app_key:
-  avatar: ''
-  placeholder: Leave your thoughts behind~
+  enable: true
+  app_id: 4coE7oztXlUgwRVoOxRCn3gp-gzGzoHsz
+  app_key: BOTy70iOpqLg3gcAcUYpdPop
+  avatar: mp
+  placeholder: 留下你的想法~
   visitor: true
-  lang: en
+  lang: zh-CN
   avatarForce: false
   meta: ['nick', 'mail']
   requiredFields: []
-  admin: 'TriDiamond'
+  admin: 'liuHeroes'
   recentComment: true
 
 # Enable Busuanzi statistic plugin
@@ -173,7 +176,7 @@ aurora_bot:
   # -- en: 英语
   # -- cn: 中文
   # ======================================================
-  locale: en
+  locale: cn
   # ======================================================
   # 目前只支持使用 Dia，将来会支持 live2d。
   # ======================================================
@@ -287,6 +290,15 @@ aurora_bot:
         text:
           - 点击就可以看文章的标签啦！
           - 使用标签可以更好的分类你的文章哦～
+      # 悬浮在 留言板 菜单
+      - selector: "[data-menu='MessageBoard']"
+        text:
+          - 快来给主人留言吧～
+      # 悬浮在 工具收藏 菜单
+      - selector: "[data-menu='ToolsCollection']"
+        text:
+          - 恭喜您发现了新大陆！
+          - 这里收藏了主人很多实用的小工具
       # 悬浮在 language 菜单
       - selector: "[data-dia='language']"
         text: 主人的博客支持多种语言。
